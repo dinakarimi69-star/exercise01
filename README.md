@@ -14,6 +14,7 @@ Index 4 → "strawberry"
 Solution:
 
 To fix this issue, we need to sort the set into a list before indexing it. Sorting guarantees a deterministic order and allows us to safely access fruits by their index.
+Find the debugging version as Exerciseone.py file.
 
 EXERCISE2:
 
@@ -26,4 +27,33 @@ this code has two problems:
 coords[:, 1] is assigned twice, meaning column 0 and column 1 receive the same values.
 
 The intended swap between (x1, y1) and (x2, y2) is not performed correctly.
-find the debugging version in exercise2.py file
+find the debugging version as exercise2.py file
+
+EXERCISE3
+
+Problem:
+
+The function reads precision-recall values from a CSV file and plots them. However, if we compare the plot with the values present in the CSV file, it is found that the points on the plot do not correspond to the actual coordinates. This is an indication of a logical error.
+Issue 1: Precision and Recall Are Plotted in the Wrong Order
+precision, recall
+the plotting code uses:
+plt.plot(results[:, 1], results[:, 0])
+
+The function description
+
+The axis labels
+
+The expected behavior
+
+Issue 2: Data Is Read as Strings Instead of Numbers:
+
+The CSV reader returns each row as a list of strings. After the stacking operation, the NumPy array still contains string values.
+This may lead to incorrect behavior of the plots or implicit type conversion.
+
+Solution:
+1.Explicitly converting CSV values to floats
+
+2.Plotting precision on the x-axis and recall on the y-axis
+
+3.Aligning axis labels with plotted data
+find the debugging version as Exercise3.py file
