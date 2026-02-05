@@ -19,3 +19,11 @@ EXERCISE2:
 
 Problem:
 The function is expected to return a new NumPy array where the x and y coordinates are flipped for every bounding box. However, the returned result is incorrect.
+the original implementation contains:
+coords[:, 0], coords[:, 1], coords[:, 2], coords[:, 3], = coords[:, 1], coords[:, 1], coords[:, 3], coords[:, 2]
+this code has two problems:
+
+coords[:, 1] is assigned twice, meaning column 0 and column 1 receive the same values.
+
+The intended swap between (x1, y1) and (x2, y2) is not performed correctly.
+find the debugging version in exercise2.py file
