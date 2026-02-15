@@ -48,20 +48,7 @@ class Discriminator(nn.Module):
         return self.model(x)
 
 def train_gan(batch_size: int = 32, num_epochs: int = 100, device: str = "cuda:0" if torch.cuda.is_available() else "cpu"):
-    """
-    The method trains a Generative Adversarial Network and is based on:
-    https://realpython.com/generative-adversarial-networks/
-
-    The Generator network tries to generate convincing images of handwritten digits.
-    The Discriminator needs to detect if the image was created by the Generator or if the image is a real image from
-    a known dataset (MNIST). 
-    If both the Generator and the Discriminator are optimized, the Generator is able to create images that are difficult
-    to distinguish from real images. This is the goal of a GAN.
-    
-    :param batch_size: The number of images to train in one epoch.
-    :param num_epochs: The number of epochs to train the GAN.
-    :param device: The computing device to use. If CUDA is installed and working, `cuda:0` is chosen; otherwise, 'cpu' is chosen.
-    """
+   
   
     transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
 
@@ -145,3 +132,4 @@ def train_gan(batch_size: int = 32, num_epochs: int = 100, device: str = "cuda:0
                 display(fig)
 
     print("Training finished.")
+
