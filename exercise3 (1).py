@@ -26,7 +26,7 @@ def plot_data(csv_file_path: str):
     precision = []
     recall = []
 
-    # Read data from CSV file
+ 
     with open(csv_file_path) as result_csv:
         reader = csv.DictReader(result_csv)
         for row in reader:
@@ -44,5 +44,6 @@ def plot_data(csv_file_path: str):
     plt.savefig("precision_recall_plot.png")
     print("Precision-Recall plot saved as 'precision_recall_plot.png'")
 
-create_csv()  # Create the CSV file
-plot_data("data_file.csv")  # Plot data from the CSV file
+create_csv()
+plot_data("data_file.csv")  
+
